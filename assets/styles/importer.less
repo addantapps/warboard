@@ -1,0 +1,543 @@
+/**
+ * importer.less
+ *
+ * By default, new Sails projects are configured to compile this file
+ * from LESS to CSS.  Unlike CSS files, LESS files are not compiled and
+ * included automatically unless they are imported below.
+ *
+ * The LESS files imported below are compiled and included in the order
+ * they are listed.  Mixins, variables, etc. should be imported first
+ * so that they can be accessed by subsequent LESS stylesheets.
+ *
+ * (Just like the rest of the asset pipeline bundled in Sails, you can
+ * always omit, customize, or replace this behavior with SASS, SCSS,
+ * or any other Grunt tasks you like.)
+ */
+
+
+
+// For example:
+//
+// @import 'variables/colors.less';
+// @import 'mixins/foo.less';
+// @import 'mixins/bar.less';
+// @import 'mixins/baz.less';
+//
+// @import 'styleguide.less';
+// @import 'pages/login.less';
+// @import 'pages/signup.less';
+//
+// etc.
+
+
+/**
+ * This is the main application stylesheet. It should include or import all
+ * stylesheets used throughout the application as this is the only stylesheet in
+ * the Grunt configuration that is automatically processed.
+ */
+
+
+/**
+ * First, we include the Twitter Bootstrap LESS files. Only the ones used in the
+ * project should be imported as the rest are just wasting space.
+ */
+
+@import '../bower_components/bootstrap/less/bootstrap.less';
+
+
+html,body{
+ height:100%;
+ overflow: hidden;
+}
+
+.navbar-custom .icon-bar {
+	background-color:#fff;
+}
+
+.navbar-custom {
+	background-color: #cc2127;
+    color:#fff;
+    border-width:0px!important;
+    box-shadow:0px 0px 5px 1px rgba(160, 154, 154, 1);
+
+}
+
+.navbar-custom li>a:hover,.navbar-custom li>a:focus{
+	background-color:#9f191f;
+}
+
+ .navbar-brand {
+    background-color:#FFF;
+    color:#000!important;
+    font-size:14px;
+}
+
+ a.navbar-brand:hover, a.navbar-brand:focus, .open > a.navbar-brand:focus, .open > a.navbar-brand {
+      background-color:#FFF!important;
+ }
+
+ .navbar-custom li>a:hover,.navbar-custom li>a:focus{
+    background-color:#9f191f;
+}
+
+.caret.caret-reversed {
+    border-top-width: 0;
+    border-bottom: 4px solid #000000;
+}
+
+.navbar-custom a{
+    color:#fefefe;
+}
+
+.navbar-custom .form-control:focus {
+	border-color: #49bfff;
+	outline: 0;
+	-webkit-box-shadow: inset 0 0 0;
+	box-shadow: inset 0 0 0;
+}
+
+#main, #main>.row {
+	height:100%;
+}
+
+#main>.row {
+    overflow-y:scroll;
+}
+
+#left {
+	height:100%;
+}
+
+#map-canvas {
+	width:100%;
+    position:absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    overflow:hidden;
+    margin: 0px;
+    padding: 0px;
+}
+
+#site-wrapper {
+    width: 100%;
+    height:  100%; /* Temp: Simulates a tall page. */
+}
+
+#site-canvas {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-transition: .3s ease all;
+    transition: .3s ease all;
+
+    padding: 5% 0; /* Temp: Just spacing. */
+}
+
+#site-menu {
+    width: 472px;
+    height: 100%;
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    right: -445px;
+    background: #FFF;
+    -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,.3);
+    -moz-box-shadow: 0 0 10px 0 rgba(0,0,0,.3);
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.3);
+}
+#site-wrapper.show-nav #site-canvas {
+    -webkit-transform: translateX(-445px);
+    transform: translateX(-445px);
+    -webkit-transition: .3s ease all;
+    transition: .3s ease all;
+}
+
+.navbar-right{
+    padding: 0 25px 0 10px;
+    background-color: #9f191f;
+}
+
+.nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
+    background-color: #9f191f; 
+    border-color: #428bca;
+}
+
+#app-logo {
+    background: url(../images/war-board-logo.png) no-repeat;
+    position: absolute;
+    left: 20px;
+    top: 30px;
+    width: 215px;
+    height: 46px;
+}
+
+.btn_toggle{
+    background: #333;
+    border: 0;
+    border-right: 1px solid #444;
+    float: left;
+    height: 47px;
+    color: #CCC;
+    font-size: 16px;
+    margin: 0px;
+    outline:none;
+}
+.btn_toggle span{
+      padding-right:0!important;
+}
+.dashboard_tabs_nav{
+    float: left;
+    width: 92%;
+}
+
+#sideTab {
+    color: #888;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color:  #333;
+    border:none;
+
+}
+
+#sideTab  > li{
+    background: #333;
+    display: block;
+    margin: 0;
+    list-style: none;
+    float: left;
+    position: relative;
+    top: 0;
+    border-bottom-width: 0;
+    padding: 0;
+    white-space: nowrap;
+    border: none;
+ }   
+
+#sideTab > li a{
+    color: #888;
+    display: block;
+    float: none;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 14px 15px;
+    line-height: 19px;
+    text-align: center;
+    text-transform: uppercase;
+    border: none;
+}  
+
+#sideTab > li a:hover {
+    color: #FFF;
+    text-decoration: none;
+    background-color: #000;
+    border: none;
+}  
+
+#sideTab > li.active a{
+    background-color: #000;
+    border: none;
+}
+#sideTab  span{
+    padding-right: 5px;
+} 
+
+#sideTab .active span{
+    color: #FFF;
+} 
+
+#sideTab .active {
+    background-color: #000;
+    border: none;
+} 
+
+
+.info_breadcrumbs{
+    background: #cc2127;
+    color: #fff;
+    padding: 10px 27px;
+    text-transform: uppercase;
+}
+.info_breadcrumbs p{
+    margin: 0px;
+}
+
+#sideTab > li.active:after {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    right: 50%;
+    top: 35px;
+    border: 6px solid;
+    border-color: #cc2127 transparent transparent #cc2127;
+    transform: skew(404deg) rotate(180deg) scale(2,1);
+}
+  
+.tab-blur table{
+    -ms-transform: translate(30px,0px); /* IE 9 */
+    -webkit-transform: translate(30px,0px); /* Chrome, Safari, Opera */
+    transform: translate(30px,0px);
+}   
+
+.tab-blur .blur-off{
+    -ms-transform: translate(0px,0px); /* IE 9 */
+    -webkit-transform: translate(0px,0px); /* Chrome, Safari, Opera */
+    transform: translate(0px,0px);
+    -webkit-transition: .35s ease all;
+    transition: .35s ease all;
+}     
+
+
+
+@-moz-keyframes pulsate {
+    from {
+        -moz-transform: scale(0.25);
+        opacity: 1.0;
+    }
+    95% {
+        -moz-transform: scale(1.3);
+        opacity: 0;
+    }
+    to {
+        -moz-transform: scale(0.3);
+        opacity: 0;
+    }
+}
+@-webkit-keyframes pulsate {
+    from {
+        -webkit-transform: scale(0.25);
+        opacity: 1.0;
+    }
+    95% {
+        -webkit-transform: scale(1.3);
+        opacity: 0;
+    }
+    to {
+        -webkit-transform: scale(0.3);
+        opacity: 0;
+    }
+}
+/* get the container that's just outside the marker image, 
+    which just happens to have our Marker title in it */
+.animpuls {
+    -moz-animation: pulsate 1.5s ease-in-out infinite;
+    -webkit-animation: pulsate 1.5s ease-in-out infinite;
+    border:1pt solid #fff;
+    /* make a circle */
+    -moz-border-radius:51px;
+    -webkit-border-radius:51px;
+    border-radius:51px;
+    /* multiply the shadows, inside and outside the circle */
+    -moz-box-shadow:inset 0 0 5px #cc2127, inset 0 0 5px #cc2127, inset 0 0 5px #cc2127, 0 0 5px #cc2127, 0 0 5px #cc2127, 0 0 5px #cc2127;
+    -webkit-box-shadow:inset 0 0 5px #cc2127, inset 0 0 5px #cc2127, inset 0 0 5px #cc2127, 0 0 5px #cc2127, 0 0 5px #cc2127, 0 0 5px #cc2127;
+    box-shadow:inset 0 0 5px #cc2127, inset 0 0 5px #cc2127, inset 0 0 5px #cc2127, 0 0 5px #cc2127, 0 0 5px #cc2127, 0 0 5px #cc2127;
+    /* set the ring's new dimension and re-center it */
+    height:51px!important;
+    margin:-18px 0 0 -18px;
+    width:51px!important;
+    position: absolute;
+}
+/* hide the superfluous marker image since it would expand and shrink with its containing element */
+/*  #map-canvas div[style*="987654"][title] img {*/
+#map-canvas .animpuls img {
+    display:none;
+}
+/* compensate for iPhone and Android devices with high DPI, add iPad media query */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (device-width: 768px) {
+    #map-canvas .animpuls {
+        margin:-10px 0 0 -10px;
+    }
+}
+
+/* CSS REQUIRED */
+.state-icon {
+    left: -5px;
+}
+.list-group-item{
+    color: #000!important;
+    border: none;
+}
+
+#company-list{
+    width: 400px;
+    border-right: 5px solid #cc2127;
+}
+
+#company-list ul{
+    margin: 0px;
+    float: left;
+    width:100%!important;
+}
+
+.list-group-item:hover{
+    background-color: #EFE7E7;
+}
+.search-client {
+    width:95%;  
+    padding-left: 5px; 
+    margin: 10px 0px 8px 10px;
+    color:#797979;
+}
+
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+    background-color:#E5D6D7!important;
+    border-color: #E5D6D7!important;
+}
+
+.angular-google-map, .angular-google-map-container { height:100%} 
+
+// @import '../src/app/home/index.less';
+
+/*  login page  */
+.login-container{
+    position: relative;
+    width: 320px;
+    margin: 80px auto;
+    padding: 20px 34px 34px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px #454545;
+    background-image:url(../images/login_bg.png);
+}
+
+#output{
+    width: 100%; 
+    color: #FF141C;
+    font-size:13px;
+    padding-bottom:10px
+}
+
+#output.alert-success{
+    background: rgb(25, 204, 25);
+}
+
+#output.alert-danger{
+    background: rgb(228, 105, 105);
+}
+
+.avatar{
+    width: 153px;height: 159px;
+    margin: 10px auto 10px;
+    background-image:url(../images/login_logo.png);
+    background-repeat: no-repeat;
+}
+
+.form-box input{
+    width: 100%;
+    padding: 15px;
+    height:18px;
+    border: 1px solid #a7a7a7;;
+    background: #fafafa;
+    box-shadow: inset 0 1px 3px #ccc;
+    transition:0.2s ease-in-out;
+
+}
+
+.form-box input:focus{
+    outline: 0;
+    background: #eee;
+}
+
+.form-box input[type="text"]{
+    border-radius: 5px;
+}
+
+.form-box input[type="password"]{
+    border-radius: 5px;
+    margin-top: 9px;
+}
+
+.form-box button.login{
+    margin-top:15px;
+    padding: 10px 20px;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+
+
+.login{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #851519;;
+    background: #cc2127;
+    box-shadow: inset 0 1px 0px #ff8083;
+    border-color: #851519;
+}
+
+.login:hover{
+
+    border: 1px solid #C70D13;;
+    background: #EF0009;
+    box-shadow: inset 0 1px 0px #73060A;
+    border-color: #C70D13;
+}
+
+.login:focus{
+
+    border: 1px solid #C70D13;;
+    background: #EF0009;
+    box-shadow: inset 0 1px 0px #ff8083;
+    border-color: #C70D13;
+}
+
+
+.forgot-pass{
+    padding: 10px 0;
+    color: #696E73;
+    font-size:13px;
+}
+
+.forgot-pass a{
+    color: #696E73;
+    font-size:13px;
+}
+.login-bg{
+	background-color: #bc3032;
+}

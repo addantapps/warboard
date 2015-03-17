@@ -1,0 +1,23 @@
+<div class="container">
+	<div class="login-container animated fadeInUp">
+        <div class="avatar"></div>
+         <div id="output">
+            <% if (errors) {%>
+            <% errors.forEach(function (error) { %>
+            <%= __(error) %>
+            <% }) %>
+            <% } %>
+        </div>
+        <div class="form-box">
+           <form class="form-horizontal" role="form" action="/auth/local" method="post">
+               <input type="text" class="form-control" id="inputUsername3" name="identifier" placeholder="Username">
+                <input type="password" class="form-control" id="inputPassword3" name="password" placeholder="Password">
+                <button class="btn btn-info btn-block login" type="submit">Login</button>
+                <div class="forgot-pass">
+                    <i class="glyphicon glyphicon-info"></i>
+            		<a href="#">Forgot your password?</a>
+            	</div>
+            </form>
+        </div>
+    </div>
+</div>    

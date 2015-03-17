@@ -1,0 +1,33 @@
+ <div class="navbar navbar-custom navbar-fixed-bottom" ng-controller="HeaderCtrl" >
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+         <li class="dropdown" id="menuLogin">
+            <a class="dropdown-toggle navbar-brand" href="#" data-toggle="dropdown" id="navLogin"><i class="glyphicon glyphicon-th-list"></i> {{currentUser.producer_name}} <span class="caret caret-reversed"></span></a>
+            <div class="dropdown-menu" style="" id="company-list">
+                <ul class="list-group checked-list-box" >
+                  <li class="list-group-item"  ng-repeat="client in clients"   my-main-directive>{{ client.ClientName }} </li>
+                </ul>
+                 <input type="text" value="Search" class="search-client" />
+            </div>
+          </li>
+        <li class="active"><a href="#">  <i class="glyphicon glyphicon-comment"></i> Chat</a></li>
+        <li><a href="#" class="toggle-nav" > <i class="glyphicon glyphicon-bookmark"></i> Labels</a></li>
+        <li><a href="#"> <i class="glyphicon glyphicon-filter"></i> Legend</a></li>
+        <li>&nbsp;</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-user"></i> {{currentUser.first_name}} <span class="caret"></span></a>
+          <ul id="g-account-menu" class="dropdown-menu" role="menu">
+            <li><a href="#"><i class="glyphicon glyphicon-user"></i> My Profile</a></li>
+            <li><a href="#"><i class="glyphicon glyphicon-cog"></i> Settings</a></li>
+            <li class="divider"></li>
+            <li><a href="/logout"><i class="glyphicon glyphicon-log-out"></i>  Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
